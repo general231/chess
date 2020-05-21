@@ -6,8 +6,10 @@ import chess
 
 
 class AiEngine:
-    def __init__(self):
+    def __init__(self, depth):
         self.chessBoard = chess.Board()
+        self.colour = chess.BLACK
+        self.depth = depth
 
     def oppositionMove(self, opposition):
         self.chessBoard.push_uci(opposition)

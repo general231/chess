@@ -1,11 +1,13 @@
 # An improvement on level 1, this AI will try and evaluate the board using a points based system for each piece, still a bad AI but it should take pieces if presented with the opportunity
+import time
 
 import chess
 
 class AiEngine:
-    def __init__(self):
+    def __init__(self, depth):
         self.chessBoard = chess.Board()
         self.colour = chess.BLACK
+        self.depth = depth
 
     def oppositionMove(self, opposition):
         # apply the oppositions move to the Ai model of the chess board
@@ -14,7 +16,10 @@ class AiEngine:
     def getMove(self):
         highestScore = -1000
         bestMove = None
+        movesEvaluated = 0
+        tic = time.perf_counter()
         for move in self.chessBoard.legal_moves:
+            movesEvaluated += 1
             testBoard = self.chessBoard
             # Apply the move
             testBoard.push(move)
@@ -26,9 +31,10 @@ class AiEngine:
                 bestMove = move
             # undo the move so you can test the next chess move
             testBoard.pop()
+        toc = time.perf_counter()
         # apply the selected move to own model of chess board
         self.chessBoard.push(bestMove)
-
+        print("I have evaluated ", movesEvaluated, " moves, it took ", (toc-tic), "s, to a depth of 1")
         return bestMove.uci()
 
     def __evaluate_board(self, chessBoard):

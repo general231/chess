@@ -106,7 +106,7 @@ class ChessScreen(PyQt5.QtWidgets.QWidget):
         return stringName
 
     def __update_chessBoardDisplay(self):
-        svg_bytes = bytearray(chess.svg.board(board=self.chessBoard, size=400), encoding='utf-8')
+        svg_bytes = bytearray(chess.svg.board(board=self.chessBoard, size=400, lastmove=self.chessBoard.peek()), encoding='utf-8')
         self.chessBoardDisplay.renderer().load(svg_bytes)
         self.chessBoardDisplay.update()
 
