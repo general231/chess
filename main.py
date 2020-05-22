@@ -3,7 +3,7 @@ import ChessEngine.gui
 import PyQt5.QtWidgets
 import sys
 
-level = 3
+level = 4
 
 if level == 1:
     from Level1.Level1 import AiEngine
@@ -13,9 +13,10 @@ elif level == 2:
     depth = 0
 elif level == 3:
     from Level3.level3 import AiEngine
-    depth = 2
+    depth = 4
 elif level == 4:
-    from Level4.Level4 import AiEngine
+    from Level4.level4 import AiEngine
+    depth = 1
 elif level == 5:
     from Level5.Level5 import AiEngine
 
