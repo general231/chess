@@ -16,7 +16,7 @@ elif level == 3:
     depth = 4
 elif level == 4:
     from Level4.level4 import AiEngine
-    depth = 1
+    depth = 6
 elif level == 5:
     from Level5.Level5 import AiEngine
 
