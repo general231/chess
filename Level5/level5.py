@@ -111,7 +111,7 @@ class AiEngine:
         row = square % 8
         column = floor(square / 8)
         if chessPiece.color == chess.BLACK:
-            column = 8 - column
+            column = 7 - column
         if chessPiece.piece_type == chess.PAWN:
             position_table = self.__get_pawn_position_table()
         elif chessPiece.piece_type == chess.KNIGHT:

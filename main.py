@@ -1,4 +1,3 @@
-import Level1.Level1
 import ChessEngine.gui
 import PyQt5.QtWidgets
 import sys
