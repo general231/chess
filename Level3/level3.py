@@ -20,6 +20,7 @@ class AiEngine:
         # apply the selected move to own model of chess board
         self.chessBoard.push(bestMove)
         print("I have evaluated ", moves_evaluated, " moves, it took ", (toc-tic), "s, to a depth of ", self.depth)
+        print(move_score)
         return bestMove.uci()
 
     def __get_move_minmax(self, board, depth):
